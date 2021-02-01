@@ -7,8 +7,12 @@ import (
 	"github.com/shengdoushi/base58"
 )
 
+var (
+	ACAlphabet = base58.NewAlphabet("123456789TBCDEFGHJKLMNPQRSAUVWXYZtbcdefghijkmnopqrsauvwxyz")
+)
+
 func Encode(input []byte) string {
-	return base58.Encode(input, base58.BitcoinAlphabet)
+	return base58.Encode(input, ACAlphabet)
 }
 
 func EncodeCheck(input []byte) string {
@@ -27,7 +31,7 @@ func EncodeCheck(input []byte) string {
 }
 
 func Decode(input string) ([]byte, error) {
-	return base58.Decode(input, base58.BitcoinAlphabet)
+	return base58.Decode(input, ACAlphabet)
 }
 
 func DecodeCheck(input string) ([]byte, error) {
