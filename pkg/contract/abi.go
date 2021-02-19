@@ -30,11 +30,19 @@ func getState(str string) core.SmartContract_ABI_Entry_StateMutabilityType {
 	switch str {
 	case "pure":
 		return core.SmartContract_ABI_Entry_Pure
+	case "Pure":
+		return core.SmartContract_ABI_Entry_Pure
 	case "view":
+		return core.SmartContract_ABI_Entry_View
+	case "View":
 		return core.SmartContract_ABI_Entry_View
 	case "nonpayable":
 		return core.SmartContract_ABI_Entry_Nonpayable
+	case "Nonpayable":
+		return core.SmartContract_ABI_Entry_Nonpayable
 	case "payable":
+		return core.SmartContract_ABI_Entry_Payable
+	case "Payable":
 		return core.SmartContract_ABI_Entry_Payable
 	default:
 		return core.SmartContract_ABI_Entry_UnknownMutabilityType
