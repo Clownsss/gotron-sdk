@@ -1,8 +1,9 @@
-module github.com/Clownsss/gotron-sdk
+module github.com/clownsss/gotron-sdk
 
 go 1.14
 
 require (
+	github.com/Clownsss/gotron-sdk v0.0.0-20210621152801-99b22232ff36
 	github.com/araddon/dateparse v0.0.0-20200409225146-d820a6159ab1
 	github.com/btcsuite/btcd v0.20.1-beta
 	github.com/deckarep/golang-set v1.7.1

@@ -5,9 +5,9 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/Clownsss/gotron-sdk/pkg/common"
-	"github.com/Clownsss/gotron-sdk/pkg/proto/api"
-	"github.com/Clownsss/gotron-sdk/pkg/proto/core"
+	"github.com/clownsss/gotron-sdk/pkg/common"
+	"github.com/clownsss/gotron-sdk/pkg/proto/api"
+	"github.com/clownsss/gotron-sdk/pkg/proto/core"
 	"github.com/golang/protobuf/proto"
 	"go.uber.org/zap"
 )
