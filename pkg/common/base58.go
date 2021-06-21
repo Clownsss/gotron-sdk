@@ -8,7 +8,7 @@ import (
 )
 
 var (
-	ACAlphabet = base58.NewAlphabet("123456789TBCDEFGHJKLMNPQRSAUVWXYZtbcdefghijkmnopqrsauvwxyz")
+	ACAlphabet = base58.NewAlphabet("123456789ABCDEFGHJKLMNPQRSWUVTXYZabcdefghijkmnopqrswuvtxyz")
 )
 
 func Encode(input []byte) string {

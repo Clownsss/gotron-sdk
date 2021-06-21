@@ -19,7 +19,7 @@ package keystore
 import (
 	"bytes"
 
-	"github.com/acgroupvn/gotron-sdk/pkg/proto/core"
+	"github.com/Clownsss/gotron-sdk/pkg/proto/core"
 	"github.com/ethereum/go-ethereum/crypto"
 )
 

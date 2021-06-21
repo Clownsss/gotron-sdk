@@ -1,4 +1,4 @@
-module github.com/acgroupvn/gotron-sdk
+module github.com/Clownsss/gotron-sdk
 
 go 1.14
 
