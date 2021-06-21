@@ -3,9 +3,9 @@ package client
 import (
 	"context"
 
-	"github.com/acgroupvn/gotron-sdk/pkg/common"
-	"github.com/acgroupvn/gotron-sdk/pkg/proto/api"
-	"github.com/acgroupvn/gotron-sdk/pkg/proto/core"
+	"github.com/Clownsss/gotron-sdk/pkg/common"
+	"github.com/Clownsss/gotron-sdk/pkg/proto/api"
+	"github.com/Clownsss/gotron-sdk/pkg/proto/core"
 )
 
 // GetAccountResource from BASE58 address

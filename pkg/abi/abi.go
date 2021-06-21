@@ -9,8 +9,8 @@ import (
 	"reflect"
 	"strconv"
 
-	"github.com/acgroupvn/gotron-sdk/pkg/address"
-	"github.com/acgroupvn/gotron-sdk/pkg/proto/core"
+	"github.com/Clownsss/gotron-sdk/pkg/address"
+	"github.com/Clownsss/gotron-sdk/pkg/proto/core"
 	eABI "github.com/ethereum/go-ethereum/accounts/abi"
 	eCommon "github.com/ethereum/go-ethereum/common"
 	"golang.org/x/crypto/sha3"

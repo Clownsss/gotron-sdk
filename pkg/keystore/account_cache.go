@@ -28,7 +28,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/acgroupvn/gotron-sdk/pkg/address"
+	"github.com/Clownsss/gotron-sdk/pkg/address"
 	mapset "github.com/deckarep/golang-set"
 	"go.uber.org/zap"
 )
