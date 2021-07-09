@@ -181,6 +181,10 @@ func convertToBytes(ty eABI.Type, v interface{}) (interface{}, error) {
 			value := [2]byte{}
 			copy(value[:], dataBytes[:2])
 			return value, nil
+		case 4:
+			value := [4]byte{}
+			copy(value[:], dataBytes[:4])
+			return value, nil
 		case 8:
 			value := [8]byte{}
 			copy(value[:], dataBytes[:8])
