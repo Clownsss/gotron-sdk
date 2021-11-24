@@ -7,14 +7,15 @@ import (
 	"github.com/Clownsss/gotron-sdk/pkg/common"
 	"github.com/Clownsss/gotron-sdk/pkg/proto/api"
 	"github.com/Clownsss/gotron-sdk/pkg/proto/core"
+	"google.golang.org/grpc"
 )
 
 // GetNowBlock return TIP block
 func (g *GrpcClient) GetNowBlock() (*api.BlockExtention, error) {
 	ctx, cancel := context.WithTimeout(context.Background(), g.grpcTimeout)
 	defer cancel()
-
-	result, err := g.Client.GetNowBlock2(ctx, new(api.EmptyMessage))
+	maxSizeOption := grpc.MaxCallRecvMsgSize(32 * 10e6)
+	result, err := g.Client.GetNowBlock2(ctx, new(api.EmptyMessage), maxSizeOption)
 
 	if err != nil {
 		return nil, fmt.Errorf("Get block now: %v", err)
@@ -27,11 +28,11 @@ func (g *GrpcClient) GetNowBlock() (*api.BlockExtention, error) {
 func (g *GrpcClient) GetBlockByNum(num int64) (*api.BlockExtention, error) {
 	numMessage := new(api.NumberMessage)
 	numMessage.Num = num
-
+	maxSizeOption := grpc.MaxCallRecvMsgSize(32 * 10e6)
 	ctx, cancel := context.WithTimeout(context.Background(), g.grpcTimeout)
 	defer cancel()
 
-	result, err := g.Client.GetBlockByNum2(ctx, numMessage)
+	result, err := g.Client.GetBlockByNum2(ctx, numMessage, maxSizeOption)
 
 	if err != nil {
 		return nil, fmt.Errorf("Get block by num: %v", err)
@@ -44,11 +45,11 @@ func (g *GrpcClient) GetBlockByNum(num int64) (*api.BlockExtention, error) {
 func (g *GrpcClient) GetBlockInfoByNum(num int64) (*api.TransactionInfoList, error) {
 	numMessage := new(api.NumberMessage)
 	numMessage.Num = num
-
+	maxSizeOption := grpc.MaxCallRecvMsgSize(32 * 10e6)
 	ctx, cancel := context.WithTimeout(context.Background(), g.grpcTimeout)
 	defer cancel()
 
-	result, err := g.Client.GetTransactionInfoByBlockNum(ctx, numMessage)
+	result, err := g.Client.GetTransactionInfoByBlockNum(ctx, numMessage, maxSizeOption)
 
 	if err != nil {
 		return nil, fmt.Errorf("Get block info by num: %v", err)
@@ -61,7 +62,7 @@ func (g *GrpcClient) GetBlockInfoByNum(num int64) (*api.TransactionInfoList, err
 func (g *GrpcClient) GetBlockByID(id string) (*core.Block, error) {
 	blockID := new(api.BytesMessage)
 	var err error
-
+	maxSizeOption := grpc.MaxCallRecvMsgSize(32 * 10e6)
 	blockID.Value, err = common.FromHex(id)
 	if err != nil {
 		return nil, fmt.Errorf("get block by id: %v", err)
@@ -70,7 +71,7 @@ func (g *GrpcClient) GetBlockByID(id string) (*core.Block, error) {
 	ctx, cancel := context.WithTimeout(context.Background(), g.grpcTimeout)
 	defer cancel()
 
-	return g.Client.GetBlockById(ctx, blockID)
+	return g.Client.GetBlockById(ctx, blockID, maxSizeOption)
 }
 
 // GetBlockByLimitNext return list of block start/end
@@ -78,20 +79,22 @@ func (g *GrpcClient) GetBlockByLimitNext(start, end int64) (*api.BlockListExtent
 	blockLimit := new(api.BlockLimit)
 	blockLimit.StartNum = start
 	blockLimit.EndNum = end
+	maxSizeOption := grpc.MaxCallRecvMsgSize(32 * 10e6)
 
 	ctx, cancel := context.WithTimeout(context.Background(), g.grpcTimeout)
 	defer cancel()
 
-	return g.Client.GetBlockByLimitNext2(ctx, blockLimit)
+	return g.Client.GetBlockByLimitNext2(ctx, blockLimit, maxSizeOption)
 }
 
 // GetBlockByLatestNum return block list till num
 func (g *GrpcClient) GetBlockByLatestNum(num int64) (*api.BlockListExtention, error) {
 	numMessage := new(api.NumberMessage)
 	numMessage.Num = num
+	maxSizeOption := grpc.MaxCallRecvMsgSize(32 * 10e6)
 
 	ctx, cancel := context.WithTimeout(context.Background(), g.grpcTimeout)
 	defer cancel()
 
-	return g.Client.GetBlockByLatestNum2(ctx, numMessage)
+	return g.Client.GetBlockByLatestNum2(ctx, numMessage, maxSizeOption)
 }
