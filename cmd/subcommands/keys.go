@@ -49,7 +49,7 @@ func keysSub() []*cobra.Command {
 
 	cmdLocation := &cobra.Command{
 		Use:   "location",
-		Short: "Show where `tronctl` keeps accounts & their keys",
+		Short: "Show where `welctl` keeps accounts & their keys",
 		RunE: func(cmd *cobra.Command, args []string) error {
 			fmt.Println(store.DefaultLocation())
 			return nil
@@ -81,7 +81,7 @@ func keysSub() []*cobra.Command {
 				fmt.Println(acc.Mnemonic)
 			}
 			addr, _ := store.AddressFromAccountName(acc.Name)
-			fmt.Printf("Tron Address: %s\n", addr)
+			fmt.Printf("Wel Address: %s\n", addr)
 			return nil
 		},
 	}
@@ -143,7 +143,7 @@ func keysSub() []*cobra.Command {
 			}
 			fmt.Println("Successfully recovered account from mnemonic!")
 			addr, _ := store.AddressFromAccountName(acc.Name)
-			fmt.Printf("Tron Address: %s\n", addr)
+			fmt.Printf("Wel Address: %s\n", addr)
 			return nil
 		},
 	}
@@ -165,7 +165,7 @@ func keysSub() []*cobra.Command {
 			if !quietImport && err == nil {
 				fmt.Printf("Imported keystore given account alias of `%s`\n", name)
 				addr, _ := store.AddressFromAccountName(name)
-				fmt.Printf("Tron Address: %s\n", addr)
+				fmt.Printf("Wel Address: %s\n", addr)
 			}
 			return err
 		},
@@ -189,7 +189,7 @@ func keysSub() []*cobra.Command {
 			if !quietImport && err == nil {
 				fmt.Printf("Imported keystore given account alias of `%s`\n", name)
 				addr, _ := store.AddressFromAccountName(name)
-				fmt.Printf("Tron Address: %s\n", addr)
+				fmt.Printf("Wel Address: %s\n", addr)
 			}
 			return err
 		},

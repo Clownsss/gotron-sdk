@@ -5,7 +5,7 @@ import (
 )
 
 const (
-	tronctlDocsDir  = "tronctl-docs"
+	tronctlDocsDir  = "welctl-docs"
 	defaultNodeAddr = "grpc.trongrid.io:50051"
 	defaultTimeout  = 20
 )

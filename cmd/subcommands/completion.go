@@ -12,7 +12,7 @@ func init() {
 		Short: "Generates bash completion scripts",
 		Long: `To load completion, run:
 
-    . <(tronctl completion)
+    . <(welctl completion)
 
 Add the line to your ~/.bashrc to enable completion for each bash session.
 `,

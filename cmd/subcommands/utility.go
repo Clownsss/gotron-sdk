@@ -10,7 +10,7 @@ import (
 func init() {
 	cmdUtilities := &cobra.Command{
 		Use:   "utility",
-		Short: "common tron utilities",
+		Short: "common wel utilities",
 		RunE: func(cmd *cobra.Command, args []string) error {
 			cmd.Help()
 			return nil
@@ -44,7 +44,7 @@ func init() {
 	}, {
 		Use:   "addr-to-base58",
 		Args:  cobra.ExactArgs(1),
-		Short: "base58 tron-address of an 0x address",
+		Short: "base58 wel-address of an 0x address",
 		RunE: func(cmd *cobra.Command, args []string) error {
 			fmt.Println(address.HexToAddress(args[0]))
 			return nil

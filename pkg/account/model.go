@@ -24,8 +24,8 @@ type Account struct {
 	IsWitness       bool             `json:"isWitness"`
 	IsElected       bool             `json:"isElected"`
 	Assets          map[string]int64 `json:"assetList"`
-	TronPower       int64            `json:"tronPower"`
-	TronPowerUsed   int64            `json:"tronPowerUsed"`
+	TronPower       int64            `json:"welPower"`
+	TronPowerUsed   int64            `json:"welPowerUsed"`
 	FrozenBalance   int64            `json:"frozenBalance"`
 	FrozenResources []FrozenResource `json:"frozenList"`
 	Votes           map[string]int64 `json:"voteList"`

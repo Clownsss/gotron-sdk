@@ -16,7 +16,7 @@ import (
 
 func checkAndMakeKeyDirIfNeeded() string {
 	userDir, _ := homedir.Dir()
-	tronCTLDir := path.Join(userDir, ".tronctl", "keystore")
+	tronCTLDir := path.Join(userDir, ".welctl", "keystore")
 	if _, err := os.Stat(tronCTLDir); os.IsNotExist(err) {
 		// Double check with Leo what is right file persmission
 		os.Mkdir(tronCTLDir, 0700)
@@ -32,7 +32,7 @@ func ListKeys(keystoreDir string) {
 	ks := keystore.NewKeyStore(tronCTLDir, scryptN, scryptP)
 	// keystore.KeyStore
 	allAccounts := ks.Accounts()
-	fmt.Printf("Tron Address:%s File URL:\n", strings.Repeat(" ", address.AddressLengthBase58))
+	fmt.Printf("Wel Address:%s File URL:\n", strings.Repeat(" ", address.AddressLengthBase58))
 	for _, account := range allAccounts {
 		fmt.Printf("%s\t\t %s\n", account.Address, account.URL)
 	}

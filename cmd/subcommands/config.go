@@ -82,7 +82,7 @@ func init() {
 }
 
 func initConfig() {
-	ConfigDir = os.Getenv("HOME") + "/.config/tronctl"
+	ConfigDir = os.Getenv("HOME") + "/.config/welctl"
 	if err := os.MkdirAll(ConfigDir, 0700); err != nil {
 		panic(err.Error())
 	}

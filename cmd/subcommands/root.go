@@ -43,8 +43,8 @@ var (
 	conn                   *client.GrpcClient
 	// RootCmd is single entry point of the CLI
 	RootCmd = &cobra.Command{
-		Use:          "tronctl",
-		Short:        "Tron Blokchain Controller ",
+		Use:          "welctl",
+		Short:        "Wel Blokchain Controller ",
 		SilenceUsage: true,
 		PersistentPreRunE: func(cmd *cobra.Command, args []string) error {
 			if verbose {
@@ -80,9 +80,9 @@ var (
 			return nil
 		},
 		Long: fmt.Sprintf(`
-CLI interface to Tron blockchain
+CLI interface to Wel blockchain
 
-%s`, g("type 'tronclt --help' for details")),
+%s`, g("type 'welclt --help' for details")),
 		RunE: func(cmd *cobra.Command, args []string) error {
 			cmd.Help()
 			return nil
@@ -93,7 +93,7 @@ CLI interface to Tron blockchain
 func init() {
 	initConfig()
 
-	vS := "dump out debug information, same as env var GOTRON_SDK_DEBUG=true"
+	vS := "dump out debug information, same as env var GOWEL_SDK_DEBUG=true"
 	RootCmd.PersistentFlags().BoolVarP(&verbose, "verbose", "v", config.Verbose, vS)
 	RootCmd.PersistentFlags().StringVarP(&signer, "signer", "s", "", "<signer>")
 	RootCmd.PersistentFlags().StringVarP(&node, "node", "n", config.Node, "<host>")
