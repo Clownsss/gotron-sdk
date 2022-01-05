@@ -18,7 +18,7 @@ const (
 
 var (
 	// DefaultConfigDirName for wallets
-	DefaultConfigDirName = ".tronctl"
+	DefaultConfigDirName = ".welctl"
 	DebugGRPC            = false
 	DebugTransaction     = false
 	ErrNotAbsPath        = errors.New("keypath is not absolute path")
@@ -27,13 +27,13 @@ var (
 )
 
 func init() {
-	if _, enabled := os.LookupEnv("TRONCTL_GRPC_DEBUG"); enabled != false {
+	if _, enabled := os.LookupEnv("WELCTL_GRPC_DEBUG"); enabled != false {
 		DebugGRPC = true
 	}
-	if _, enabled := os.LookupEnv("TRONCTL_TX_DEBUG"); enabled != false {
+	if _, enabled := os.LookupEnv("WELCTL_TX_DEBUG"); enabled != false {
 		DebugTransaction = true
 	}
-	if _, enabled := os.LookupEnv("TRONCTL_ALL_DEBUG"); enabled != false {
+	if _, enabled := os.LookupEnv("WELCTL_ALL_DEBUG"); enabled != false {
 		EnableAllVerbose()
 	}
 }

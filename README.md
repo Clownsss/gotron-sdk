@@ -1,6 +1,6 @@
-# TRON's go-sdk
+# WEL's go-sdk
 
-GoSDK and TRON-CLI tool for TRON's blockchain via GRPC
+GoSDK and WEL-CLI tool for WEL's blockchain via GRPC
 
 # Build
 
@@ -14,10 +14,10 @@ $ make
 
 # bash completions
 
-once built, add `tronctl` to your path and add to your `.bashrc`
+once built, add `welctl` to your path and add to your `.bashrc`
 
 ```
-. <(tronctl completion)
+. <(welctl completion)
 ```
 
 ## Transfer JSON file format
@@ -55,9 +55,9 @@ Example of JSON file:
 
 # Debugging
 
-The gotron-sdk code respects `GOTRON_SDK_DEBUG` as debugging
+The gowel-sdk code respects `GOWEL_SDK_DEBUG` as debugging
 based environment variables.
 
 ```bash
-GOTRON_SDK_DEBUG=true ./tronctl
+GOWEL_SDK_DEBUG=true ./welctl
 ```

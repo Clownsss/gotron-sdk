@@ -1,5 +1,7 @@
 tronctl
-tonctl-docs
+tronctl-docs
+welctl
+welctl-docs
 bin
 .idea/
 *.key
